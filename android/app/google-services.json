@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "389280765696",
+    "project_id": "balmond-6bfd4",
+    "storage_bucket": "balmond-6bfd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389280765696:android:951da6e0c9fc6f5191c5e5",
+        "android_client_info": {
+          "package_name": "com.example.balmond_chat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwQj2gN6leKdaK9RMZrj6VlOAfEs_zZJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
