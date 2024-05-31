@@ -27,6 +27,7 @@ class _MainAppState extends State<MainApp> {
   
   @override
   Widget build(BuildContext context) {
+    // for checking user already login or not
     bool logged = FirebaseAuth.instance.currentUser != null;
 
     return  OKToast(
@@ -35,6 +36,7 @@ class _MainAppState extends State<MainApp> {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
           useMaterial3: true,
         ),
+        // if user already login, open HomePage, if not open LoginPage
         home: logged ? const HomePage() : const LoginPage()
       ),
     );

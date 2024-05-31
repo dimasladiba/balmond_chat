@@ -2,7 +2,6 @@ import 'package:balmond_chat/home_page.dart';
 import 'package:balmond_chat/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_chat_core/flutter_firebase_chat_core.dart';
 import 'package:oktoast/oktoast.dart';
 
 class LoginPage extends StatefulWidget {
@@ -35,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
 
     return Scaffold(
       body: Center(
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           child: Column(
             // mainAxisSize: MainAxisSize.min,
@@ -50,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: TextField(
                   controller: txtEmail,
                   keyboardType: TextInputType.emailAddress,

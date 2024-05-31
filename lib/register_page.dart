@@ -23,12 +23,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          // title: const Text(
-          //   "Chat List",
-          //   style: TextStyle(fontSize: 26, fontWeight: FontWeight.w600),
-          // ),
-          ),
+      appBar: AppBar(),
       body: Center(
         child: SizedBox(
           width: double.infinity,
@@ -42,26 +37,26 @@ class _RegisterPageState extends State<RegisterPage> {
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: TextField(
                   controller: txtFirstName,
                   keyboardType: TextInputType.phone,
                   textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       icon: Icon(Icons.person), hintText: "First Name"),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: TextField(
                   controller: txtLastName,
                   keyboardType: TextInputType.phone,
                   textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       icon: Icon(Icons.person), hintText: "Last Name"),
                 ),
               ),
@@ -69,37 +64,35 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: 16,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: TextField(
                   controller: txtEmail,
                   keyboardType: TextInputType.emailAddress,
                   textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
-                      icon: Icon(Icons.email_outlined),
-                      hintText: "Email"),
+                  decoration: const InputDecoration(
+                      icon: Icon(Icons.email_outlined), hintText: "Email"),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: TextField(
                   controller: txtPhone,
                   keyboardType: TextInputType.phone,
                   textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
-                      icon: Icon(Icons.phone),
-                      hintText: "Phone"),
+                  decoration: const InputDecoration(
+                      icon: Icon(Icons.phone), hintText: "Phone"),
                 ),
               ),
               const SizedBox(
                 height: 16,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: TextField(
                   controller: txtPassword,
                   textInputAction: TextInputAction.done,
                   obscureText: showPassword,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: "Password",
                     icon: Icon(Icons.password),
                   ),
@@ -135,11 +128,13 @@ class _RegisterPageState extends State<RegisterPage> {
                               type.User(
                                   id: credetial.user!.uid,
                                   firstName: txtFirstName.text,
-                                  metadata: {"phone":txtPhone.text, "email": txtEmail.text},
+                                  metadata: {
+                                    "phone": txtPhone.text,
+                                    "email": txtEmail.text
+                                  },
                                   lastName: txtLastName.text));
                           showToast("Register success, please re-login");
                           Navigator.pop(context);
-                          
                         } on Exception catch (e) {
                           showToast(e.toString());
                         }

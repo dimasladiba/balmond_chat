@@ -28,10 +28,10 @@ class _ChatPageState extends State<ChatPage> with AutomaticKeepAliveClientMixin 
               onPressed: () async {
                 FirebaseAuth.instance.signOut().then((value) =>
                     Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(builder: (c) => LoginPage()),
+                        MaterialPageRoute(builder: (c) => const LoginPage()),
                         (route) => false));
               },
-              icon: Icon(Icons.logout))
+              icon: const Icon(Icons.logout))
         ],
       ),
       body: StreamBuilder<List<type.Room>>(
@@ -54,12 +54,12 @@ class _ChatPageState extends State<ChatPage> with AutomaticKeepAliveClientMixin 
                     Navigator.of(context).push(MaterialPageRoute(
                             builder: (c) => ChatRoomPage(room: rooms[i])));
                   },
-                  leading: CircleAvatar(
+                  leading: const CircleAvatar(
                     child: Icon(Icons.person_2),
                   ),
                   title: Text(
                     rooms[i].name ?? "-",
-                    style: TextStyle(fontWeight: FontWeight.w500),
+                    style: const TextStyle(fontWeight: FontWeight.w500),
                   ),
                   // subtitle: Text(rooms[i].lastMessages.first ?? "-"),
                 );

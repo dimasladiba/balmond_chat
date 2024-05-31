@@ -49,12 +49,12 @@ class _ContactPageState extends State<ContactPage> with AutomaticKeepAliveClient
                         (value) => Navigator.of(context).push(MaterialPageRoute(
                             builder: (c) => ChatRoomPage(room: value))));
                   },
-                  leading: CircleAvatar(
+                  leading: const CircleAvatar(
                     child: Icon(Icons.person_2),
                   ),
                   title: Text(
                     "${users[i].firstName!} ${users[i].lastName!}",
-                    style: TextStyle(fontWeight: FontWeight.w500),
+                    style: const TextStyle(fontWeight: FontWeight.w500),
                   ),
                 );
               },
